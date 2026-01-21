@@ -9,6 +9,8 @@ services:
     #   - 5173:5173
     volumes:
       - ../..:/workspaces:cached
+      - "~/.ssh:/home/dss/.ssh"
+      - "~/.gitconfig:/home/dss/.gitconfig"
     hostname: dss
     user: dss
     # Overrides default command so things don't shut down after the process ends.
