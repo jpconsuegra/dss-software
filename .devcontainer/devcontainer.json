@@ -19,7 +19,8 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"DEVSENSE.phptools-vscode"
+				"DEVSENSE.phptools-vscode",
+				"laravel.vscode-laravel"
 			]
 		}
 	},

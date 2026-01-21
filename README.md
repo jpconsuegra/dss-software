@@ -1,14 +1,8 @@
 # Devcontainer for DSS
 
-Instructions to install _Laravel_:
+Instructions to setup _Laravel_ project:
 
 - Reopen project in DevContainer.
-
-- Run `composer global require laravel/installer`
-
-- Run `echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc`
-
-- Restart the terminal.
 
 - Run `laravel new example-app`
 

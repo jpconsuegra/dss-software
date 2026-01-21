@@ -70,3 +70,9 @@ RUN apt-get update && apt-get install -y openssh-client
 
 # [optional] set the default user. Omit if you want to keep the default as root.
 USER $USERNAME
+
+# install laravel
+
+RUN composer global require laravel/installer
+
+ENV PATH="/home/$USERNAME/.config/composer/vendor/bin:${PATH}"
