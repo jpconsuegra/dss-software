@@ -2,6 +2,8 @@ FROM ubuntu:24.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG USERNAME=dss
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
 
 RUN apt-get update  -y \
     && apt-get install -y --no-install-recommends ca-certificates apt-transport-https software-properties-common
@@ -51,9 +53,13 @@ RUN apt-get update -y \
     && apt-get install -y --no-install-recommends unzip p7zip-full 
 
 
+# remove the default ubuntu user
+RUN userdel -r ubuntu || true \
+ && groupdel ubuntu || true
+
 # create the user
-RUN groupadd $USERNAME \
-    && useradd -g $USERNAME -m $USERNAME \
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
     # [optional] add sudo support. Omit if you don't need to install software after connecting.
     && apt-get update -y \
     && apt-get install -y sudo \
