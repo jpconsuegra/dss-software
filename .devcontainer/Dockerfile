@@ -27,7 +27,10 @@ RUN apt-get update -y \
 
 # node and npm
 RUN apt-get update -y \
-    && apt-get install -y --no-install-recommends nodejs npm
+    && apt-get install -y curl ca-certificates \
+    && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+    && apt-get install -y nodejs \
+    && rm -rf /var/lib/apt/lists/*
 
 
 # mysql

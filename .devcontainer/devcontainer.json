@@ -11,12 +11,11 @@
 
 	// For use with PHP or Apache (e.g.php -S localhost:8080 or apache2ctl start)
 	"forwardPorts": [
-		8000, 3306, 8080
+		8000, // app
+		3306, // mysql
+		8080, // adminer
+		5173 // vite
 	],
-	"features": {
-		"ghcr.io/devcontainers/features/github-cli:1": {},
-		"ghcr.io/devcontainers-contrib/features/composer:1": {}
-	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
