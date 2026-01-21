@@ -66,6 +66,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
 
+RUN apt-get update && apt-get install -y openssh-client
 
 # [optional] set the default user. Omit if you want to keep the default as root.
 USER $USERNAME
