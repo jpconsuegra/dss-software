@@ -12,6 +12,9 @@ Instructions to install _Laravel_:
 
 - Run `laravel new example-app`
 
+    - Say no to `Default database updated. Would you like to run the default database migrations?`.
+    > Optional: Use `php artisan migrate` after completing the project setup.
+
 - Substitute the following inside the `example-app/.env`.
 
     ```
@@ -38,6 +41,8 @@ Instructions to install _Laravel_:
         // ...
     });
     ```
+
+- Run `cd example-app`.
 
 - Run `npm install && npm run build`.
 
